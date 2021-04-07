@@ -3,10 +3,10 @@ html{
   box-sizing: border-box; /* it's easier to manage boder, padding and margin*/
 }
 body{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin: 0; /* There's a margin By default, 0 will eliminate it */
   height: 100vh; /* full height : 100 view port height */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem; /* 16 px*/
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -52,6 +52,34 @@ a{
 a:hover{
   color: #ff8000;
 }
+ul{
+  padding: 0;
+  margin:0;
+  list-style-type: none; /* to get red of endpoints */ 
+}
+li{
+  margin-top: 1rem;
+}
+button{
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.6rem; /* 16 px*/
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+button.primary{
+  background-color: #f0c040;
+}
+button.block{
+  width: 100%
+}
+button:hover{
+  border: 0.1rem #404040 solid;
+}
 /* Header */ 
 header a{
   color: #ffffff;
@@ -71,6 +99,15 @@ a.brand{
 .row.center{
   justify-content: center;
 }
+.row.top{
+  align-items: flex-start;
+}
+.col-1{
+  flex: 1 1 25rem; /* one_of_four  shrinkable with_of_column*/
+}
+.col-2{
+  flex: 2 1 50rem
+}
 /* images */
 img{
   border-radius: 0.5rem;
@@ -78,6 +115,9 @@ img{
 img.medium{
   max-width: 29rem;
   width: 100%;
+}
+img.large{
+  width: 100%
 }
 /* Card */
 .card{
@@ -102,4 +142,11 @@ img.medium{
 }
 .rating span:last-child{
   color: #404040;
+}
+/* Alert */
+.success{
+  color: #20a020;
+}
+.error{
+  color: #a02020;
 }

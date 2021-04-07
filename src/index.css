@@ -1,0 +1,102 @@
+html{
+  font-size : 62.5%; /*default size in a browzer : 16px , we have 16 * 62.5 = 10px = 1 rem*/
+  box-sizing: border-box; /* it's easier to manage boder, padding and margin*/
+}
+body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0; /* There's a margin By default, 0 will eliminate it */
+  height: 100vh; /* full height : 100 view port height */
+  font-size: 1.6rem; /* 16 px*/
+  font-family: Arial, Helvetica, sans-serif;
+}
+#root{ /*We use root here, because we have root in the /public/index.html */
+  height: 100% 
+}
+/* Layout */
+.grid-container{
+  display: grid; /* Responsive layout for css */
+  grid-template-areas: 
+      'header'
+      'main'
+      'footer';
+  grid-template-columns: 1fr; /* 1 fragment*/
+  grid-template-rows: 5rem 1fr 5rem; /* header main footer*/
+  height : 100%;
+}
+header{
+  grid-area: header; /* we affect this grid to the defined holder above*/
+  background-color: #203040;
+}
+main{
+  grid-area: main;
+  padding: 1rem;
+}
+footer{
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffffff;
+}
+/*Common*/
+h1{
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+h2{
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+a{
+  text-decoration: none; /*Eliminate all default decorations ( ex: underline link here ) */
+}
+a:hover{
+  color: #ff8000;
+}
+/* Header */ 
+header a{
+  color: #ffffff;
+  padding: 1rem;
+}
+a.brand{
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.row{
+  display: flex; /* create lines next to each other, not in seperate lines */
+  flex-wrap: wrap; /* Make rows responsive, if there's not enaugh space, they will return to the newt line */ 
+  justify-content: space-between; /* Create maximum distance between words */ 
+  align-items: center;
+}
+.row.center{
+  justify-content: center;
+}
+/* images */
+img{
+  border-radius: 0.5rem;
+}
+img.medium{
+  max-width: 29rem;
+  width: 100%;
+}
+/* Card */
+.card{
+  border: 0.1rem #c0c0c0 solid; 
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+.card-body{
+  padding: 1rem; 
+}
+.card-body > * { /* th >* means all direct childs inside the class card-body */
+  margin-bottom: 0.5rem;
+}
+.price{
+  font-size: 2rem;
+}
+/* Rating */
+.rating span{
+  color: #f0c040;
+  margin: 0.1rem;
+}

@@ -1,4 +1,4 @@
-import { CART_ADD_ITEM } from '../constantes/cartConstantes';
+import { CART_ADD_ITEM, CART_REMOVE_ITEM } from '../constantes/cartConstantes';
 
 export const cartReducer = (state = { cartItems: [] }, action) => {
   switch (action.type) {
@@ -15,6 +15,8 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
       } else {
         return { ...state, cartItems: [...state.cartItems, item] };
       }
+    case CART_REMOVE_ITEM:
+      return {...state, cartItems: state.cartItems.filter(x => x.product !== action.payload)} // filtering out the product having the id of the payload 
     default:
       return state;
   }

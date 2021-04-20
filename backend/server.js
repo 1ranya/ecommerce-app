@@ -1,7 +1,17 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import data from './data.js'
-const app = express()
+import userRouter from './routers/userRouter.js';
+
+const app = express();
 const port = process.env.PORT || 5000
+
+//connection to mongoDB 
+mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/shecancode",{
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+    useCreateIndex: true
+})
 
 app.get('/', (req, res) => {
     res.send("Server is ready !")
@@ -18,6 +28,13 @@ app.get('/api/products/:id', (req, res) => {
 app.get("/api/products", (req, res) => {
     return res.send(data.products)
 })
+
+app.use("/api/users", userRouter); //Connect the server to userRouter 
+
+app.use((err, req, res, next) => {
+    res.status(500).send({message:err.message});
+})
+
 app.listen(5000, () => {
     console.log(`Server is listning on port http://localhost:${port}`)
 })

@@ -1,12 +1,12 @@
 
 import React from 'react';
-import data from "./data"
 import Product from "./components/Product"
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Homescreen from './screens/HomeScreen';
 import Productscreen from './screens/ProductScreen';
 import Cartscreen from './screens/CartScreen';
 import { useSelector } from 'react-redux';
+import Signinscreen from './screens/SigninScreen';
 
 function App() {
 
@@ -34,6 +34,7 @@ function App() {
 				<Route path="/cart/:id?" component={Cartscreen}></Route>
 				<Route path="/product/:id" component={Productscreen}></Route>
 				<Route path="/" component={Homescreen} exact></Route>
+				<Route path="/signin" component={Signinscreen}></Route>
 			</main>
 			<footer className="row center">
 					All rights reserved!

@@ -186,6 +186,9 @@ img.large{
   color: #a02020;
   background-color: #ffe0e0e0;
 }
+.loading{
+  display: block !important
+}
 /* form */
 .form{
   max-width: 60rem;

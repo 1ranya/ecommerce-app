@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Signinscreen from './screens/SigninScreen';
 import { sign } from 'jsonwebtoken';
 import { signout } from './actions/userActions';
+import RegisterScreen from './screens/RegisterScreen';
 
 function App() {
 
@@ -41,7 +42,7 @@ function App() {
 					? (
 						<div className="dropdown">
 							<Link to="#">
-								{ userInfo.data.name } <i className="fa fa-caret-down"></i>
+								{ userInfo.name } <i className="fa fa-caret-down"></i>
 							</Link>
 							<ul className="dropdown-content">
 								<Link to="#signout" onClick={signoutHandler}>
@@ -59,6 +60,7 @@ function App() {
 				<Route path="/product/:id" component={Productscreen}></Route>
 				<Route path="/" component={Homescreen} exact></Route>
 				<Route path="/signin" component={Signinscreen}></Route>
+				<Route path="/register" component={RegisterScreen}></Route>
 			</main>
 			<footer className="row center">
 					All rights reserved!

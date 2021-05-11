@@ -28,6 +28,7 @@ export default signin;
 export const signout = () => (dispatch) =>{
     localStorage.removeItem('userInfo');
     localStorage.removeItem('cartItems');
+    localStorage.removeItem('shippingAddress');
     dispatch({
         type: USER_SIGNOUT, 
     })

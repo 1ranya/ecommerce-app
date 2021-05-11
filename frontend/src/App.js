@@ -11,6 +11,7 @@ import { sign } from 'jsonwebtoken';
 import { signout } from './actions/userActions';
 import RegisterScreen from './screens/RegisterScreen';
 import { ShippingAddressScreen } from './screens/ShippingAddressScreen';
+import { Payementmethodscreen } from './screens/PayementMethodScreen';
 
 function App() {
 
@@ -61,6 +62,7 @@ function App() {
 				<Route path="/product/:id" component={Productscreen}></Route>
 				<Route path="/" component={Homescreen} exact></Route>
 				<Route path="/shipping" component={ShippingAddressScreen}></Route>
+				<Route path="/payment" component={Payementmethodscreen}></Route>
 				<Route path="/signin" component={Signinscreen}></Route>
 				<Route path="/register" component={RegisterScreen}></Route>
 			</main>

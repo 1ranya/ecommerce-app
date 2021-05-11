@@ -201,7 +201,7 @@ img.large{
 }
 .form label{
   margin: 1rem 0; /*1rem vertically, 0 horizontally */ 
-  display: block;
+  /* display: block; */
 } 
 /* dropdown */
 .dropdown{

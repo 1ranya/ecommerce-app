@@ -10,6 +10,7 @@ import Signinscreen from './screens/SigninScreen';
 import { sign } from 'jsonwebtoken';
 import { signout } from './actions/userActions';
 import RegisterScreen from './screens/RegisterScreen';
+import { ShippingAddressScreen } from './screens/ShippingAddressScreen';
 
 function App() {
 
@@ -59,6 +60,7 @@ function App() {
 				<Route path="/cart/:id?" component={Cartscreen}></Route>
 				<Route path="/product/:id" component={Productscreen}></Route>
 				<Route path="/" component={Homescreen} exact></Route>
+				<Route path="/shipping" component={ShippingAddressScreen}></Route>
 				<Route path="/signin" component={Signinscreen}></Route>
 				<Route path="/register" component={RegisterScreen}></Route>
 			</main>
